@@ -4,8 +4,8 @@ import {ShoppingCart } from 'lucide-react';
 
 export const Navbar = () => {
   return (
-   <nav className='bg-yellow-300 w-fll h-12 shadow-lg'>
-    <div className='flex justify-between items-center px-10'>
+   <nav className='bg-yellow-300 h-12 shadow-lg'>
+    <div className='flex justify-between items-center px-12'>
         <div>
             <Link to={"/"} className='font-bold text-2xl'>@discout</Link>
         </div>

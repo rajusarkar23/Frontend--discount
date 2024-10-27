@@ -1,7 +1,12 @@
+import { CategoryBar } from "@/components/page-components/CategoryBar"
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <main className="px-12 py-4">
+      <div>
+        <CategoryBar />
+      </div>
+    </main>
   )
 }
 
