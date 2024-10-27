@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export const CategoryBar = () => {
   const inputs = [
     {
-      src: "https://firebasestorage.googleapis.com/v0/b/assets-e52f6.appspot.com/o/ecommerce-app%2Ficons%2Foffer.png?alt=media&token=2e69bc64-a719-4985-8790-93f1a3cdda31",
+      src: "https://firebasestorage.googleapis.com/v0/b/assets-e52f6.appspot.com/o/ecommerce-app%2Ficons%2FEarbuds_1.jpg?alt=media&token=7de7ef50-669f-4f39-86bd-6a6ed736b434",
       alt: "offer",
       width: "80px",
       title: "Offers",
