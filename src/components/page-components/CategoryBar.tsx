@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export const CategoryBar = () => {
   const inputs = [
     {
-      src: "https://firebasestorage.googleapis.com/v0/b/assets-e52f6.appspot.com/o/ecommerce-app%2Ficons%2FEarbuds_1.jpg?alt=media&token=7de7ef50-669f-4f39-86bd-6a6ed736b434",
+      src: "https://firebasestorage.googleapis.com/v0/b/assets-e52f6.appspot.com/o/ecommerce-app%2Ficons%2FOffers_1.jpg?alt=media&token=b6f218e5-c176-420a-a78c-d86093cbdf60",
       alt: "offer",
       width: "80px",
       title: "Offers",
@@ -17,7 +17,7 @@ export const CategoryBar = () => {
       href: "/phones",
     },
     {
-      src: "https://firebasestorage.googleapis.com/v0/b/assets-e52f6.appspot.com/o/ecommerce-app%2Ficons%2Flaptop.jpg?alt=media&token=85264397-1c2d-42fd-a244-50442e0097d7",
+      src: "https://firebasestorage.googleapis.com/v0/b/assets-e52f6.appspot.com/o/ecommerce-app%2Ficons%2Flaptop_1.jpg?alt=media&token=a26abf2b-879b-4932-8f53-e98efea0d30d",
       alt: "laptop",
       width: "120px",
       title: "Laptop",
@@ -31,7 +31,7 @@ export const CategoryBar = () => {
       href: "/watches",
     },
     {
-      src: "https://firebasestorage.googleapis.com/v0/b/assets-e52f6.appspot.com/o/ecommerce-app%2Ficons%2Fearbuds.jpg?alt=media&token=36c76f3e-d384-4bc3-b8d0-fc8ab716082d",
+      src: "https://firebasestorage.googleapis.com/v0/b/assets-e52f6.appspot.com/o/ecommerce-app%2Ficons%2FEarbuds_1.jpg?alt=media&token=7de7ef50-669f-4f39-86bd-6a6ed736b434",
       alt: "earbuds",
       width: "85px",
       title: "Earbuds",
