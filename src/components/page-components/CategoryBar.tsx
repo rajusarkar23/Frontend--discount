@@ -46,7 +46,7 @@ export const CategoryBar = () => {
           <Link to={input.href}>
             <li
               key={index}
-              className="bg-pink-200 p-3 flex flex-col items-center rounded"
+              className="bg-yellow-400 p-3 flex flex-col items-center rounded"
             >
               <img
                 src={input.src}
