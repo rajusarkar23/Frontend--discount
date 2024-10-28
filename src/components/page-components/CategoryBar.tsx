@@ -5,7 +5,7 @@ export const CategoryBar = () => {
     {
       src: "https://firebasestorage.googleapis.com/v0/b/assets-e52f6.appspot.com/o/ecommerce-app%2Ficons%2FOffers_1.jpg?alt=media&token=b6f218e5-c176-420a-a78c-d86093cbdf60",
       alt: "offer",
-      width: "80px",
+      width: "85px",
       title: "Offers",
       href: "/offer",
     },
@@ -19,7 +19,7 @@ export const CategoryBar = () => {
     {
       src: "https://firebasestorage.googleapis.com/v0/b/assets-e52f6.appspot.com/o/ecommerce-app%2Ficons%2Flaptop_1.jpg?alt=media&token=a26abf2b-879b-4932-8f53-e98efea0d30d",
       alt: "laptop",
-      width: "120px",
+      width: "85px",
       title: "Laptop",
       href: "/laptops",
     },
