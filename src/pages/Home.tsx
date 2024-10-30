@@ -1,5 +1,5 @@
 import { CategoryBar } from "@/components/page-components/CategoryBar"
-import { TopCarousl } from "@/components/page-components/TopCarousel"
+import { TopCarousel } from "@/components/page-components/TopCarousel"
 
 const Home = () => {
   return (
@@ -8,7 +8,7 @@ const Home = () => {
         <CategoryBar />
       </div>
       <div>
-        <TopCarousl/>
+        <TopCarousel/>
       </div>
     </main>
   )

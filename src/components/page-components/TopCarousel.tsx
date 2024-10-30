@@ -1,33 +1,16 @@
-import Autoplay from "embla-carousel-autoplay"
-import React from "react"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel"
-import { Card, CardContent } from "../ui/card"
+import useEmblaCarousel from 'embla-carousel-react'
+import Autoplay from 'embla-carousel-autoplay'
 
-export const TopCarousl = () => {
-    const plugin = React.useRef(
-        Autoplay({ delay: 800, stopOnInteraction: false })
-      )
-     
-      return (
-        <Carousel
-          plugins={[plugin.current]}
-          className="w-full max-w-m"
-        >
-          <CarouselContent>
-            {Array.from({ length: 5 }).map((_, index) => (
-              <CarouselItem key={index}>
-                <div className="p-1">
-                  <Card>
-                    <CardContent className="flex aspect-square items-center justify-center p-6">
-                      <span className="text-4xl font-semibold">{index + 1}</span>
-                    </CardContent>
-                  </Card>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
-      )
-    }
+export function TopCarousel() {
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay({delay: 3000})])
+
+  return (
+    <div className="overflow-hidden" ref={emblaRef}>
+      <div className="flex">
+        <div className="flex-[0_0_100%] min-w-0"><img src="https://pub-4f375bc887d14901a460cf775d883a89.r2.dev/athens-7402123_1920.jpg" alt="" width={"800px"} height={"3000px"}/></div>
+        <div className="flex-[0_0_100%] min-w-0"><img src="https://pub-4f375bc887d14901a460cf775d883a89.r2.dev/rome-5074421_1920.jpg" alt="" width={"820px"}/></div>
+        <div className="flex-[0_0_100%] min-w-0"><img src="https://pub-4f375bc887d14901a460cf775d883a89.r2.dev/santorini-416136_1920.jpg" alt="" width={"820px"}/></div>
+      </div>
+    </div>
+  )
+}
