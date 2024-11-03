@@ -5,6 +5,7 @@ import { Navbar } from './components/page-components/Navbar'
 import { Footer } from './components/page-components/Footer'
 import Login from './pages/user/Login'
 import Register from './pages/user/Register'
+import VerifyOtp from './pages/user/VerifyOtp'
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,16 @@ const router = createBrowserRouter([
       <Navbar />
       <Register />
       <Footer />
+      </>
+    )
+  },
+  {
+    path: "/user/verify-otp",
+    element: (
+      <>
+        <Navbar />
+        <VerifyOtp />
+        <Footer />
       </>
     )
   }

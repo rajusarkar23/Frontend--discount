@@ -11,6 +11,7 @@ interface formFields {
 }
 
 export const LoginForm = () => {
+  //@ts-ignore
   const [isSubmitting, setIsSubmitting] = useState(false);
   const {
     register,

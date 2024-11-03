@@ -12,7 +12,7 @@ interface formFields {
 }
 
 export const RegisterForm = () => {
-
+  //@ts-ignore
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const {register, handleSubmit, formState: {errors}} = useForm<formFields>()
