@@ -12,7 +12,7 @@ export const Navbar = () => {
       <div className="flex justify-between items-center px-12">
         <div>
           <Link to={"/"} className="font-bold text-2xl">
-            @discout
+            @discount
           </Link>
         </div>
         <div className="flex mt-1">

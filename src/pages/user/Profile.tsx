@@ -1,7 +1,10 @@
+import { ProfileData } from "@/components/page-components/ProfileData"
 
 const Profile = () => {
   return (
-    <div>Profile</div>
+    <>
+      <ProfileData />
+    </>
   )
 }
 
