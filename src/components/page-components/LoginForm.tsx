@@ -4,6 +4,7 @@ import { Input } from "../ui/input";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import {BACKEND_URI} from "../../../utils/index"
+import { useNavigate } from "react-router-dom";
 
 interface formFields {
   email: string;
@@ -13,6 +14,8 @@ interface formFields {
 export const LoginForm = () => {
   //@ts-ignore
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState(false)
+  const navigate = useNavigate()
   const {
     register,
     handleSubmit,
@@ -32,6 +35,13 @@ export const LoginForm = () => {
         credentials: "include"
       })
       const res = await req.json()
+
+      if (res.success === true) {
+        navigate("/user/profile")
+      } else{
+        setError(true)
+        console.log("error true");
+      }
       console.log(res);
       setIsSubmitting(false)
     } catch (error) {

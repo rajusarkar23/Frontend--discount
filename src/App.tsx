@@ -6,6 +6,7 @@ import { Footer } from './components/page-components/Footer'
 import Login from './pages/user/Login'
 import Register from './pages/user/Register'
 import VerifyOtp from './pages/user/VerifyOtp'
+import Profile from './pages/user/Profile'
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,16 @@ const router = createBrowserRouter([
       <>
         <Navbar />
         <VerifyOtp />
+        <Footer />
+      </>
+    )
+  },
+  {
+    path: "/user/profile",
+    element: (
+      <>
+        <Navbar />
+        <Profile />
         <Footer />
       </>
     )

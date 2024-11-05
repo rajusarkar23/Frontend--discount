@@ -8,11 +8,14 @@ import {
 } from "../ui/input-otp";
 import {BACKEND_URI} from "../../../utils/index"
 import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 export const VerifyOtpForm = () => {
     const [otpValue, setOtpValue] = useState("")
-    console.log(otpValue);
+    const [error, setError] = useState(false)
     const token = Cookies.get("otpVerifyToken")
+
+    const navigate = useNavigate()
 
     // useEffect( async () => {
     //   const res = await fetch(`${BACKEND_URI}/user/verify-valid-otp-jwt`, {
@@ -23,7 +26,7 @@ export const VerifyOtpForm = () => {
     //   })
     // }, [])
 
-    console.log(token);
+    // console.log(token);
     
 
     const handleSubmit = async (e:React.FormEvent<HTMLFormElement>) => {
@@ -41,7 +44,14 @@ export const VerifyOtpForm = () => {
         })
         const response = await res.json()
         console.log(response);
-        
+
+        if (response.success === true) {
+            navigate("/user/profile")
+        } else{
+          setError(true)
+          console.log("error true");
+          
+        }
       } catch (error) {
         console.log(error);
         
