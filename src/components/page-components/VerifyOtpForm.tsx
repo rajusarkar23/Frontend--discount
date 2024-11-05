@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import {
   InputOTP,
@@ -13,6 +13,16 @@ export const VerifyOtpForm = () => {
     const [otpValue, setOtpValue] = useState("")
     console.log(otpValue);
     const token = Cookies.get("otpVerifyToken")
+
+    // useEffect( async () => {
+    //   const res = await fetch(`${BACKEND_URI}/user/verify-valid-otp-jwt`, {
+    //     method: "POST",
+    //     headers: {
+    //       "Authorization": `${token}`
+    //     }
+    //   })
+    // }, [])
+
     console.log(token);
     
 
