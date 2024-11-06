@@ -23,7 +23,7 @@ export const Navbar = () => {
             <div>
               {token ? (
                 <Link to={"/user/profile"}>
-                  <li className="bg-white px-2 text-center items-center rounded font-bold hover:bg-black hover:text-yellow-300 transition-all">
+                  <li className="bg-white text-center items-center rounded-full font-bold hover:bg-black hover:text-yellow-300 transition-all">
                     <User2 />
                   </li>
                 </Link>

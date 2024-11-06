@@ -15,6 +15,7 @@ interface formFields {
 export const RegisterForm = () => {
   //@ts-ignore
   const [isSubmitting, setIsSubmitting] = useState(false)
+  //@ts-ignore
   const [error, setError] = useState(false)
   const navigate = useNavigate()
 

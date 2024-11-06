@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Button } from "../ui/button";
 import {
   InputOTP,
@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 
 export const VerifyOtpForm = () => {
     const [otpValue, setOtpValue] = useState("")
+    //@ts-ignore
     const [error, setError] = useState(false)
     const token = Cookies.get("otpVerifyToken")
 
