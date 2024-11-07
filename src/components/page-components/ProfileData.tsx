@@ -2,8 +2,10 @@ import Cookies from "js-cookie";
 import React, { useEffect, useRef, useState } from "react";
 import { BACKEND_URI } from "../../../utils/index";
 import { Input } from "../ui/input";
-import { Pencil } from "lucide-react";
+import { Loader2, Pencil } from "lucide-react";
 import { Button } from "../ui/button";
+// import { useToast } from "@/hooks/use-toast";
+// import { ToastAction } from "../ui/toast";
 
 // interface for user data
 interface UserData {
@@ -25,6 +27,9 @@ export const ProfileData = () => {
   // truthy falsy states
   const [isNameEditing, setIsNameEditing] = useState(false);
   const [isEmailEditing, setIsEmailEditing] = useState(false);
+  const [updateBtnClicked, setUpdateBtnClick] = useState(false)
+
+  // const {toast} = useToast()
   // grab the token
   const token = Cookies.get("sessionToken");
   // run this func to get the user details
@@ -80,6 +85,48 @@ export const ProfileData = () => {
     }
   };
 
+  // update name
+  const updateName = async () => {
+    setUpdateBtnClick(true)
+    try {
+      const res = await fetch (`${BACKEND_URI}/user/update-fullName`, {
+        method: "POST",
+        headers: {
+          Authorization: `${token}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({fullName: userData.fullName})
+      })
+      const response = await res.json()
+      console.log(response);
+      setIsNameEditing(false)
+      setUpdateBtnClick(false)
+    } catch (error) {
+      console.log(error);
+      
+    }
+  }
+
+  // update email
+  const updateEmail = async () => {
+    try {
+      const res = await fetch(`${BACKEND_URI}/user/update-email`, {
+        method: "POST",
+        headers: {
+          Authorization: `${token}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({email: userData.email})
+      })
+      const response = await res.json()
+      console.log(response);
+      setIsEmailEditing(false)
+    } catch (error) {
+      console.log(error);
+      
+    }
+  }
+
   return (
     <div className="flex flex-col gap-y-2 items-center justify-center mt-52">
       <div className="flex space-x-2">
@@ -93,7 +140,7 @@ export const ProfileData = () => {
         />
 
         {isNameEditing ? (
-          <Button className="hover:bg-yellow-300 hover:text-black">Edit</Button>
+          <Button className="hover:bg-yellow-300 hover:text-black" onClick={updateName}>{updateBtnClicked ? (<Loader2 />) : (<p>Update</p>)}</Button>
         ) : (
           <Button
             className="hover:bg-yellow-300 hover:text-black"
@@ -103,6 +150,7 @@ export const ProfileData = () => {
           </Button>
         )}
       </div>
+      <p>chhdcjvdc</p>
 
       <div className="flex space-x-2">
         <Input
@@ -114,7 +162,7 @@ export const ProfileData = () => {
           className="w-52"
         />
         {
-          isEmailEditing ? (<Button>Edit</Button>) : (  <Button
+          isEmailEditing ? (<Button className="hover:bg-yellow-300 hover:text-black" onClick={updateEmail}>Update</Button>) : (  <Button
           className="hover:bg-yellow-300 hover:text-black"
           onClick={handleClickEmail}
         >
