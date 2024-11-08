@@ -1,11 +1,17 @@
-import { ProfileData } from "@/components/page-components/ProfileData"
+import { ProfileActions } from "@/components/page-components/ProfileActions";
+import { ProfileData } from "@/components/page-components/ProfileData";
 
 const Profile = () => {
   return (
     <>
-      <ProfileData />
+      <div>
+        <ProfileData />
+      </div>
+      <div>
+        <ProfileActions />
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;

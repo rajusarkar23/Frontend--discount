@@ -150,7 +150,6 @@ export const ProfileData = () => {
           </Button>
         )}
       </div>
-      <p>chhdcjvdc</p>
 
       <div className="flex space-x-2">
         <Input
