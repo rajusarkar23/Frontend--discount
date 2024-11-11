@@ -9,6 +9,8 @@ import VerifyOtp from "./pages/user/VerifyOtp";
 import Profile from "./pages/user/Profile";
 import Order from "./pages/user/Order";
 import ManageAddress from "./pages/user/ManageAddress";
+import SellerRegistration from "@/pages/seller/Register"
+import Landing from "./pages/seller/Landing";
 
 const router = createBrowserRouter([
   {
@@ -81,6 +83,28 @@ const router = createBrowserRouter([
       </>
     ),
   },
+
+  //seller paths
+  {
+    path: "/seller/h",
+    element: (
+      <>
+        <Navbar />
+        <Landing />
+        <Footer />
+      </>
+    )
+  },
+  {
+    path: "seller/register",
+    element: (
+      <>
+        <Navbar />
+        <SellerRegistration />
+        <Footer />
+      </>
+    )
+  }
 ]);
 
 function App() {

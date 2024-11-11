@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { Button } from "../ui/button";
-import { Input } from "../ui/input";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import {BACKEND_URI} from "../../../utils/index"
 import { useNavigate } from "react-router-dom";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { BACKEND_URI } from "../../../../utils/index";
 
 interface formFields {
   fullName: string,
@@ -25,7 +25,7 @@ export const RegisterForm = () => {
     console.log(data);
     try {
       setIsSubmitting(true)
-      const req = await fetch(`${BACKEND_URI}/user/register`, {
+      const req = await fetch(`${BACKEND_URI}/seller/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -36,7 +36,7 @@ export const RegisterForm = () => {
 
       const res = await req.json()
       if (res.success === true) {
-        navigate("/user/verify-otp")
+        navigate("/seller/verify-otp")
       } else{
         setError(true)
         console.log("error true");
@@ -85,7 +85,7 @@ export const RegisterForm = () => {
           {errors.email && <p className="text-red-500 font-bold">{errors.email.message}</p>}
 
         </div>
-        <Button className="w-96 hover:text-yellow-300">Login</Button>
+        <Button className="w-96 hover:text-yellow-300">Register</Button>
         <div className="flex">
           <Link to={"/user/login"}>
             <h2 className="font-bold text-blue-500">

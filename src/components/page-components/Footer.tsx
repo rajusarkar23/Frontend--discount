@@ -29,6 +29,7 @@ export const Footer = () => {
               Contact
             </Link>
           </li>
+          <li><Link to={"/seller/h"}>Sell with us</Link></li>
         </ul>
         <div className="text-center md:text-right">
           <p className="text-sm">Follow us on:</p>
