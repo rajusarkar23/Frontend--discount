@@ -87,7 +87,7 @@ export const RegisterForm = () => {
         </div>
         <Button className="w-96 hover:text-yellow-300">Register</Button>
         <div className="flex">
-          <Link to={"/user/login"}>
+          <Link to={"/seller/login"}>
             <h2 className="font-bold text-blue-500">
               Already have an account? Login
             </h2>

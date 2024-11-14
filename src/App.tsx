@@ -9,8 +9,12 @@ import VerifyOtp from "./pages/user/VerifyOtp";
 import Profile from "./pages/user/Profile";
 import Order from "./pages/user/Order";
 import ManageAddress from "./pages/user/ManageAddress";
-import SellerRegistration from "@/pages/seller/Register"
+import SellerRegistration from "@/pages/seller/Register";
+import SellerOtpVerify from "@/pages/seller/VerifyOtp";
 import Landing from "./pages/seller/Landing";
+import SellerLogin from "@/pages/seller/Login"
+import { SellerNavbar } from "./components/page-components/seller/SellerNavbar";
+import Dashboard from "./pages/seller/Dashboard";
 
 const router = createBrowserRouter([
   {
@@ -89,18 +93,48 @@ const router = createBrowserRouter([
     path: "/seller/h",
     element: (
       <>
-        <Navbar />
+        <SellerNavbar />
         <Landing />
+        <Footer />
+      </>
+    ),
+  },
+  {
+    path: "/seller/register",
+    element: (
+      <>
+        <SellerNavbar />
+        <SellerRegistration />
+        <Footer />
+      </>
+    ),
+  },
+  {
+    path: "/seller/verify-otp",
+    element: (
+      <>
+        <SellerNavbar />
+        <SellerOtpVerify />
+        <Footer />
+      </>
+    ),
+  },
+  {
+    path: "/seller/login",
+    element: (
+      <>
+        <SellerNavbar />
+        <SellerLogin />
         <Footer />
       </>
     )
   },
   {
-    path: "seller/register",
+    path: "/seller/dashboard",
     element: (
       <>
-        <Navbar />
-        <SellerRegistration />
+        <SellerNavbar />
+        <Dashboard />
         <Footer />
       </>
     )

@@ -30,7 +30,7 @@ export const VerifyOtpForm = () => {
         console.log(response);
 
         if (response.success === true) {
-            navigate("/user/profile")
+            navigate("/seller/dashbaord")
         } else{
           setError(true)
           console.log("error true");
