@@ -13,36 +13,44 @@ import { BACKEND_URI } from "../../../../utils/index";
 
 export const AddProducts = () => {
 
+
+  // upload image
   const uploadImage = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.files);
-    console.log("sahbdjvh");
+    // onChange target the file
+    const files = e.target.files;
 
-    const formData = new FormData()
-    formData.append("file",e.target.files![0])
-
+    console.log(typeof(files));
+    
+    // if no file available error
+    if (!files) {
+      console.error("No file selected");
+      return;
+    }
+    // create formData
+    const formData = new FormData();
+    
+    // append files array 
+    formData.append("file", files[0]);
+    // send http req
     try {
-      const res = await fetch (`${BACKEND_URI}/seller/upload`, {
+      const res = await fetch(`${BACKEND_URI}/seller/upload`, {
         method: "POST",
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-        body: formData,
-      })
-      const data = await res.json()
-      console.log(data);
+        body: formData, // send here the form data not the files
+      });
+
+      const response = await res.json()
+  
+      if (response.success !== true) {
+        throw new Error(`Error: ${res.status} - ${res.statusText}`);
+      }
+      
+      console.log("Upload successful:", response);
+      console.log(formData);
       
     } catch (error) {
-      console.log(error);
-      
+      console.error("File upload failed:", error);
     }
-    
   };
-
-  const test = () => {
-    console.log("dmcbdcvd");
-    
-  }
-  test()
 
   return (
     <AlertDialog>
@@ -61,9 +69,9 @@ export const AddProducts = () => {
             <Input placeholder="Price" />
             <div>
               <label>Primary</label>
-              <Input type="file" onSelect={uploadImage}/>
+              <Input type="file" onChange={uploadImage}/>
               <label>Secondary</label>
-              <Input type="file" />
+              <Input type="file" onChange={uploadImage}/>
               <label>Third</label>
               <Input type="file" />
             </div>
