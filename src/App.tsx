@@ -15,8 +15,9 @@ import Landing from "./pages/seller/Landing";
 import SellerLogin from "@/pages/seller/Login"
 import { SellerNavbar } from "./components/page-components/seller/SellerNavbar";
 import Dashboard from "./pages/seller/Dashboard";
-import Product from "./pages/Product";
+import Product from "./pages/user/Product";
 import ShowAllProducts from "./pages/seller/ShowAllProducts";
+import SProduct from "./pages/seller/SProduct";
 
 const router = createBrowserRouter([
   {
@@ -147,6 +148,16 @@ const router = createBrowserRouter([
       <>
         <Navbar />
         <Product />
+        <Footer />
+      </>
+    )
+  },
+  {
+    path: "/s/product/:id/:id",
+    element: (
+      <>
+        <SellerNavbar />
+        <SProduct />
         <Footer />
       </>
     )

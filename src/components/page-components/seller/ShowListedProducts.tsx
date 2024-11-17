@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { BACKEND_URI } from "../../../../utils/index";
 import { Link } from "react-router-dom";
+// import { EditProduct } from "./EditProduct";
 
 interface productFields {
   image: {
@@ -24,6 +25,7 @@ export const ShowListedProducts = () => {
           method: "GET",
         });
         const response = await res.json();
+        console.log(Array.isArray(response));
 
         // Map all the products to my state array
         const formattedProducts = response.products.map((product: any) => ({
@@ -57,28 +59,30 @@ export const ShowListedProducts = () => {
               <Link
                 key={index}
                 className="border px-6"
-                to={`/product/${product.title}/${product._id}`}
+                to={`/s/product/${product.title}/${product._id}`}
               >
-                <h2>{product.title}</h2>
+                <h2 key={index}>{product.title}</h2>
                 <img
                   src={product.image.primary}
                   alt={product.title}
+                  key={index}
                   style={{
                     width: "200px",
                     height: "200px",
                     objectFit: "cover",
                   }}
                 />
-                <p>Price: {product.price}</p>
-                <ul>
+                <p key={index}>Price: {product.price}</p>
+                <ul key={index}>
                   {product.specification.map((spec, index) => (
                     <li key={index} className="list-disc">
                       {spec}
                     </li>
                   ))}
                 </ul>
+                
               </Link>
-              
+            
             </>
           ))
         ) : (
