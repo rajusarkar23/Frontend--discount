@@ -196,29 +196,29 @@ export const AddProducts = () => {
       return <span className="font-semibold text-blue-950">Primary image uploading...</span>
     }
     if (primaryImgUploaSuccess) {
-      return <span className="font-bold text-green-800">Upload success</span>
+      return <span className="font-bold text-green-800">Primary image upload success</span>
     }
-    return <span>Upload primary image</span>
+    return <span className="font-bold">Upload primary image</span>
   }
 
   const secondaryImglabels = () => {
     if (secondaryImgUploading) {
-      return <span className="font-semibold text-blue-950">Primary image uploading...</span>
+      return <span className="font-semibold text-blue-950">Secondary image uploading...</span>
     }
     if (secondaryImgUploaSuccess) {
-      return <span className="font-bold text-green-800">Upload success</span>
+      return <span className="font-bold text-green-800">Secondary image upload success</span>
     }
-    return <span>Upload primary image</span>
+    return <span className="font-bold">Upload secondary image</span>
   }
 
   const tertiaryImglabels = () => {
     if (tertiaryImgUploading) {
-      return <span className="font-semibold text-blue-950">Primary image uploading...</span>
+      return <span className="font-semibold text-blue-950">Tertiary image uploading...</span>
     }
     if (tertiaryImgUploaSuccess) {
-      return <span className="font-bold text-green-800">Upload success</span>
+      return <span className="font-bold text-green-800">Tertiary image upload success</span>
     }
-    return <span>Upload primary image</span>
+    return <span className="font-bold">Upload tertiary image</span>
   }
 
   return (
