@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 
 export const SellerNavbar = () => {
   const token = Cookies.get("sessionToken");
-  console.log(token);
+  // console.log(token);
 
   return (
     <nav className="bg-blue-400 h-12 shadow-lg">
