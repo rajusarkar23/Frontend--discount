@@ -1,4 +1,5 @@
 import { CategoryBar } from "@/components/page-components/CategoryBar"
+import { ShowMobiles } from "@/components/page-components/ShowMobiles"
 import { TopCarousel } from "@/components/page-components/TopCarousel"
 
 const Home = () => {
@@ -10,8 +11,9 @@ const Home = () => {
       <div className="py-4">
         <TopCarousel/>
       </div>
-      <div>
-      <img src="https://res.cloudinary.com/dhwxejlhv/image/upload/v1720787026/p27vig7qkejds7dks4om.jpg" alt="img" width={"150px"}/>
+      {/* show products */}
+      <div className="py-9 mb-[100px]">
+        <ShowMobiles />
       </div>
     </main>
   )

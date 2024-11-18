@@ -5,7 +5,9 @@ export const Footer = () => {
     <footer className="bg-black text-yellow-400 p-6 fixed bottom-0 w-full">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
         <div className="text-center md:text-left">
-          <h2 className="text-lg font-semibold">@discount</h2>
+          <h2 className="text-lg font-semibold">
+            <Link to={"/"}>@discount</Link>
+          </h2>
           <p className="text-sm">© 2024 @discount. All rights reserved.</p>
         </div>
         <ul className="flex space-x-4">
@@ -29,7 +31,9 @@ export const Footer = () => {
               Contact
             </Link>
           </li>
-          <li><Link to={"/seller/h"}>Sell with us</Link></li>
+          <li>
+            <Link to={"/seller/h"}>Sell with us</Link>
+          </li>
         </ul>
         <div className="text-center md:text-right">
           <p className="text-sm">Follow us on:</p>

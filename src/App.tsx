@@ -15,7 +15,7 @@ import Landing from "./pages/seller/Landing";
 import SellerLogin from "@/pages/seller/Login"
 import { SellerNavbar } from "./components/page-components/seller/SellerNavbar";
 import Dashboard from "./pages/seller/Dashboard";
-import Product from "./pages/user/Product";
+import Product from "./pages/Product";
 import ShowAllProducts from "./pages/seller/ShowAllProducts";
 import SProduct from "./pages/seller/SProduct";
 
