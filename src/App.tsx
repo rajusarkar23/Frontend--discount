@@ -18,6 +18,7 @@ import Dashboard from "./pages/seller/Dashboard";
 import Product from "./pages/Product";
 import ShowAllProducts from "./pages/seller/ShowAllProducts";
 import SProduct from "./pages/seller/SProduct";
+import Buy from "./pages/Buy";
 
 const router = createBrowserRouter([
   {
@@ -168,6 +169,16 @@ const router = createBrowserRouter([
       <>
       <SellerNavbar />
       <ShowAllProducts />
+      <Footer />
+      </>
+    )
+  },
+  {
+    path: "/buy/:id/:id",
+    element: (
+      <>
+      <Navbar />
+      <Buy />
       <Footer />
       </>
     )

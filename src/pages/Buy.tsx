@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { BACKEND_URI } from ".././../utils/index";
-import { Button } from "@/components/ui/button";
-
 
 interface productFields {
   title: string;
@@ -16,7 +14,7 @@ interface productFields {
   _id: string;
 }
 
-const Product = () => {
+const Buy = () => {
   const { id } = useParams();
   const [productDetails, setProductDetails] = useState<productFields[]>([]);
   console.log(productDetails);
@@ -60,20 +58,7 @@ const Product = () => {
       {productDetails.map((product, index) => (
         <div className="flex px-4">
           {/* for image */}
-          <div className="border mt-3" key={index}>
-            <img key={index} src={product.image.primary} alt="img" />
-            <div className="flex space-x-3 text-center justify-center">
-              <div className="w-24 h-24 border">
-                <img src={product.image.primary} alt="" />
-              </div>
-              <div className="w-24 h-24 border">
-                <img src={product.image.secondary} alt="" />
-              </div>
-              <div className="w-24 h-24 border">
-                <img src={product.image.tertiary} alt="" />
-              </div>
-            </div>
-          </div>
+
           {/* for texts */}
           <div className="mt-48 ml-16">
             <p>{product.title}</p>
@@ -85,8 +70,12 @@ const Product = () => {
               ))}
             </div>
             <div className="mt-8 space-x-2">
-              <Link className="bg-yellow-300 text-black font-bold text-xl hover:bg-black hover:text-yellow-300 px-6 rounded py-2" to={`/buy/${product.title}/${id}`}>Buy</Link>
-              <Button className="bg-orange-400 text-black font-bold text-xl hover:bg-orange-600">Add to wishlist</Button>
+              <Link
+                className="bg-yellow-300 text-black font-bold text-xl hover:bg-black hover:text-yellow-300 px-6 rounded py-2"
+                to={`/buy/${product.title}/${id}`}
+              >
+                Buy
+              </Link>
             </div>
           </div>
         </div>
@@ -95,4 +84,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default Buy;
